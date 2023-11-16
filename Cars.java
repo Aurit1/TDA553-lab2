@@ -9,6 +9,7 @@ public class Cars implements Movable{
     SOUTH
     }
     
+    private int carSize;
     private int nrDoors; // Number of doors on the car
     private int enginePower; // Engine power of the car
     private float currentSpeed; // The current speed of the car
@@ -18,7 +19,7 @@ public class Cars implements Movable{
     private CarPosition position;
     private boolean carIsOn;
     
-    Cars(int nrDoors,Color color,int enginePower,String modelName){
+    Cars(int nrDoors,Color color,int enginePower,String modelName, int carSize){
         this.nrDoors = nrDoors;
         this.color = color;
         this.enginePower = enginePower;
@@ -28,22 +29,26 @@ public class Cars implements Movable{
         stopEngine();
     }
     
-    public final int getNrDoors(){
+    public int getNrDoors(){
         return nrDoors;
     }
-    public final float getEnginePower(){
+    public float getEnginePower(){
         return enginePower;
     }
 
-    public final float getCurrentSpeed(){
+    public int getCarSize() {
+        return carSize;
+    }
+
+    public float getCurrentSpeed(){
         return currentSpeed;
     }
 
-    public final Color getColor(){
+    public Color getColor(){
         return color;
     }
 
-    public final String getModelName(){
+    public String getModelName(){
         return modelName;
     }
 
@@ -84,6 +89,10 @@ public class Cars implements Movable{
         if(amount <= 1 && amount >= 0 && carIsOn) {
             decrementSpeed(amount);
         }
+    }
+
+    public Direction getFacingDirection() {
+        return facingDirection;
     }
 
     public void turnLeft(){
@@ -139,5 +148,10 @@ public class Cars implements Movable{
 
     public CarPosition getPosition(){
         return position;
+    }
+
+    void setPosition(float x, float y) {
+        position.x = x;
+        position.y = y;
     }
 }

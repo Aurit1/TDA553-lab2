@@ -210,8 +210,5 @@ public class CarsTest {
         Assert.assertTrue(saab.getPosition() instanceof CarPosition);
     } 
 
-    @Test
-    public void tt() {
-        
-    }
+    
 }
