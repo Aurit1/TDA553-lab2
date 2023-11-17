@@ -17,7 +17,6 @@ public class Workshop<T extends Cars> {
         if(carsInWorkshop.size() < maxNrOfCars){
             carsInWorkshop.add(car);
         }
-        
-
     }
+        
 }

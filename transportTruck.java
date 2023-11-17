@@ -17,7 +17,7 @@ public class transportTruck extends Cars{
         return maxNrCars;
     }
 
-    public ArrayList<Cars> getCarLoad(){
+    public ArrayList<Cars> getLoad(){
         return carLoad;
     }
 
@@ -42,6 +42,7 @@ public class transportTruck extends Cars{
 
 
         if (CarPosition.calcDistance(this,car) > 1f || !bedDown || car.getCarSize() > 100) { //This
+            System.out.print("Hello");
             _canBeLoaded = false;
         }
 
