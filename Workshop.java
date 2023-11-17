@@ -13,10 +13,18 @@ public class Workshop<T extends Cars> {
     }
 
     public void loadCar (T car){
-        
         if(carsInWorkshop.size() < maxNrOfCars){
             carsInWorkshop.add(car);
         }
     }
-        
+
+    public void unLoadCar(T car) {
+        if(carsInWorkshop.contains(car)) {
+            carsInWorkshop.remove(car);
+        }
+    }
+
+    public ArrayList<T> getStorage() {
+        return carsInWorkshop;
+    }
 }

@@ -41,7 +41,7 @@ public class transportTruck extends Cars{
         Boolean _canBeLoaded = true;
 
 
-        if (CarPosition.calcDistance(this,car) > 1f || !bedDown || car.getCarSize() > 100) { //This
+        if (CarPosition.calcDistance(this,car) > 1f || !bedDown || car.getCarSize() > 100 || this.getCurrentSpeed() > 0) { //This
             System.out.print("Hello");
             _canBeLoaded = false;
         }
@@ -53,7 +53,7 @@ public class transportTruck extends Cars{
     }
     
     public void unloadCar() {
-        if(carLoad.size() > 0) {
+        if(carLoad.size() > 0 || this.getCurrentSpeed() == 0) {
             Cars car = carLoad.get((carLoad.size() - 1));
             carLoad.remove((carLoad.size() - 1));
 
